@@ -41,14 +41,15 @@ commands:
       - run: find packages -name package.json -maxdepth 2 | xargs cat >> /tmp/lock
       - restore_cache:
           keys:
-            - v5-dependencies-{{ checksum "/tmp/lock" }}
-            - v5-dependencies-
+            - v6-dependencies-{{ checksum "/tmp/lock" }}
+            - v6-dependencies-
       - run: yarn install
       - save_cache:
-          key: v5-dependencies-{{ checksum "/tmp/lock" }}
+          key: v6-dependencies-{{ checksum "/tmp/lock" }}
           paths:
             - node_modules
             - packages/utils/node_modules
+            - packages/app/node_modules
 
 ########################################################################################################################
 #                                                       JOBS                                                           #
