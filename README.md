@@ -47,25 +47,10 @@ Result: Works!
   - node_modules
   - packages/utils/node_modules
 
-Result:
+Result: Works!
 
-<!-- ### case 4 -->
-<!--  -->
-<!-- Result: **Failed** -->
+### case 5
 
-<!-- Even though all directories are cached, `yarn install` tries to install from scratch: -->
-<!--  -->
-<!-- ``` -->
-<!-- #!/bin/bash -eo pipefail -->
-<!-- yarn install -->
-<!-- yarn install v1.10.1 -->
-<!-- [1/4] Resolving packages... -->
-<!-- [2/4] Fetching packages... -->
-<!-- [3/4] Linking dependencies... -->
-<!-- [4/4] Building fresh packages... -->
-<!-- success Saved lockfile. -->
-<!-- Done in 0.53s. -->
-<!-- ``` -->
-<!--  -->
-<!-- https://circleci.com/gh/acro5piano/yarn-issue-workspaces-slow/31 -->
-<!--  -->
+- make @yiws/app depends on @yiws/utils
+
+Result: Works!
