@@ -65,9 +65,7 @@ jobs:
     steps:
       - attach-workspace
       - yarn-setup
-      - run: yarn tsc
-      - run: yarn lint:ts
-      - run: yarn lint:css
+      - run: yarn workspace @yiws/app test
 
 ########################################################################################################################
 #                                                      WORKFLOWS                                                       #
