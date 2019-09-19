@@ -1,0 +1,1 @@
+require('@yiws/utils').hello()

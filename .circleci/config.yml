@@ -1,0 +1,87 @@
+version: 2.1
+
+########################################################################################################################
+#                                                      EXECUTORS                                                       #
+########################################################################################################################
+
+_common: &common
+  working_directory: ~/repo
+  environment:
+    TZ: /usr/share/zoneinfo/Asia/Tokyo
+
+executors:
+
+  basic:
+    <<: *common
+    docker:
+      - image: alpine:3.8
+
+  node:
+    <<: *common
+    docker:
+      - image: circleci/node:10.13.0
+
+########################################################################################################################
+#                                                       COMMANDS                                                       #
+########################################################################################################################
+
+commands:
+  persist-to-workspace:
+    steps:
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  attach-workspace:
+    steps:
+      - attach_workspace:
+          at: ~/repo
+  yarn-setup:
+    steps:
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+########################################################################################################################
+#                                                       JOBS                                                           #
+########################################################################################################################
+
+jobs:
+
+  checkout:
+    executor: basic
+    steps:
+      - run: apk add --no-cache ca-certificates git
+      - checkout
+      - persist-to-workspace
+
+  test:
+    executor: node
+    steps:
+      - attach-workspace
+      - yarn-setup
+      - run: yarn tsc
+      - run: yarn lint:ts
+      - run: yarn lint:css
+
+########################################################################################################################
+#                                                      WORKFLOWS                                                       #
+########################################################################################################################
+
+workflows:
+  version: 2
+  master_jobs:
+    jobs:
+      - checkout
+      - test:
+          requires:
+            - checkout
+      - build-storybook:
+          requires:
+            - checkout
+            - test
