@@ -65,7 +65,7 @@ Result: Works!
 
 - add a lot of deps (includes react-native) into child repo
 
-Result: **FAILED**
+Result: **FAILED** -> no, it works!!!
 
 ### case 8
 
@@ -81,6 +81,11 @@ Result: **SUCCESS**
 
 ### case 10
 
-- add react-native-sentry
+- add "express-fileupload": "richardgirges/express-fileupload" to @yiws/app
 
-Result: **SUCCESS**
+Result: **FAILED**
+
+The reason is implicit GitHub repo dependency.
+Maybe Yarn will look at the GitHub repository to get the newest version.
+
+This issue is not related to neither Yarn workspaces nor React Native.
