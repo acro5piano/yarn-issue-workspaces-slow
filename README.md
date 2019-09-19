@@ -30,3 +30,5 @@ Result: Works!
   - packages/utils/node_modules
 
 Result: Fails!
+
+Even though all `node_modules` dirs are cached.
