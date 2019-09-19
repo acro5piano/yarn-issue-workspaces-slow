@@ -79,7 +79,3 @@ workflows:
       - test:
           requires:
             - checkout
-      - build-storybook:
-          requires:
-            - checkout
-            - test
