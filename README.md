@@ -63,6 +63,18 @@ Result: Works!
 
 ### case 7
 
-- add a lot of deps into child repo
+- add a lot of deps (includes react-native) into child repo
 
-Result: ?????
+Result: **FAILED**
+
+### case 8
+
+- remove react-native related
+
+Result: **SUCCESS**
+
+### case 9
+
+- add react-native-sentry
+
+Result: **SUCCESS**
