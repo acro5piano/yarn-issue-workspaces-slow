@@ -39,14 +39,14 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "yarn.lock" }}
-            - v2-dependencies-
+            - v3-dependencies-{{ checksum "yarn.lock" }}
+            - v3-dependencies-
       - run: yarn install
       - save_cache:
-          key: v2-dependencies-{{ checksum "yarn.lock" }}
+          key: v3-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - packages/app/node_modules
+            - packages/utils/node_modules
 
 ########################################################################################################################
 #                                                       JOBS                                                           #

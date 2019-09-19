@@ -2,6 +2,6 @@
   "name": "@yiws/utils",
   "version": "1.0.0",
   "devDependencies": {
-    "ky": "^0.14.0"
+    "ky": "^0.13.0"
   }
 }
