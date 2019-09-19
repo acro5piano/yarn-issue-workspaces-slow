@@ -53,4 +53,8 @@ Result: Works!
 
 - make @yiws/app depends on @yiws/utils: 1.0.0
 
-Result: **Failed!!**
+Result: Works!
+
+### case 6
+
+- add a lot of deps (ported form my private repository)
