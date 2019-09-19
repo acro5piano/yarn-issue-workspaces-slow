@@ -70,7 +70,4 @@ workflows:
   version: 2
   master_jobs:
     jobs:
-      - checkout
-      - test:
-          requires:
-            - checkout
+      - test
