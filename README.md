@@ -78,3 +78,9 @@ Result: **SUCCESS**
 - add react-native-sentry
 
 Result: **SUCCESS**
+
+### case 10
+
+- add react-native-sentry
+
+Result: **SUCCESS**
