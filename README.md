@@ -40,27 +40,32 @@ Result: Works!
 
 Result: Works!
 
-### case 3
+### case 4
 
-- minor version mis-matches with workspace (js-yaml: ^3.13.1) and @yiws/utils (js-yaml: ^3.12.1)
+- minor version mis-matches with workspace (js-yaml: ^3.13.1) and @yiws/utils (js-yaml: ^2.0.0)
 - cache dir
   - node_modules
   - packages/utils/node_modules
 
-Result: **Failed**
+Result:
 
-Even though all directories are cached, `yarn install` tries to install from scratch:
+<!-- ### case 4 -->
+<!--  -->
+<!-- Result: **Failed** -->
 
-```
-#!/bin/bash -eo pipefail
-yarn install
-yarn install v1.10.1
-[1/4] Resolving packages...
-[2/4] Fetching packages...
-[3/4] Linking dependencies...
-[4/4] Building fresh packages...
-success Saved lockfile.
-Done in 0.53s.
-```
-
-https://circleci.com/gh/acro5piano/yarn-issue-workspaces-slow/31
+<!-- Even though all directories are cached, `yarn install` tries to install from scratch: -->
+<!--  -->
+<!-- ``` -->
+<!-- #!/bin/bash -eo pipefail -->
+<!-- yarn install -->
+<!-- yarn install v1.10.1 -->
+<!-- [1/4] Resolving packages... -->
+<!-- [2/4] Fetching packages... -->
+<!-- [3/4] Linking dependencies... -->
+<!-- [4/4] Building fresh packages... -->
+<!-- success Saved lockfile. -->
+<!-- Done in 0.53s. -->
+<!-- ``` -->
+<!--  -->
+<!-- https://circleci.com/gh/acro5piano/yarn-issue-workspaces-slow/31 -->
+<!--  -->
