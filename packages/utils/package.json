@@ -2,7 +2,7 @@
   "name": "@yiws/utils",
   "version": "1.0.0",
   "devDependencies": {
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^3.12.1",
     "ky": "^0.13.0"
   }
 }

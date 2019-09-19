@@ -38,4 +38,13 @@ Result: Works!
   - node_modules
   - packages/utils/node_modules
 
+Result: Works!
+
+### case 3
+
+- minor version mis-matches with workspace (js-yaml: ^3.13.1) and @yiws/utils (js-yaml: ^3.12.1)
+- cache dir
+  - node_modules
+  - packages/utils/node_modules
+
 Result:
