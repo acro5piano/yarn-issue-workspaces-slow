@@ -37,15 +37,13 @@ commands:
           at: ~/repo
   yarn-setup:
     steps:
-      - run: cat package.json yarn.lock > /tmp/lock
-      - run: find packages -name package.json -maxdepth 2 | xargs cat >> /tmp/lock
       - restore_cache:
           keys:
-            - v6-dependencies-{{ checksum "/tmp/lock" }}
+            - v6-dependencies-{{ checksum "yarn.lock" }}
             - v6-dependencies-
       - run: yarn install
       - save_cache:
-          key: v6-dependencies-{{ checksum "/tmp/lock" }}
+          key: v6-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
             - packages/utils/node_modules
@@ -57,17 +55,10 @@ commands:
 
 jobs:
 
-  checkout:
-    executor: basic
-    steps:
-      - run: apk add --no-cache ca-certificates git
-      - checkout
-      - persist-to-workspace
-
   test:
     executor: node
     steps:
-      - attach-workspace
+      - checkout
       - yarn-setup
       - run: yarn workspace @yiws/app test
 
