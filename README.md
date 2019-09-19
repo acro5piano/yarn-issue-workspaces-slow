@@ -51,6 +51,6 @@ Result: Works!
 
 ### case 5
 
-- make @yiws/app depends on @yiws/utils
+- make @yiws/app depends on @yiws/utils: 1.0.0
 
-Result: Works!
+Result: **Failed!!**
