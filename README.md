@@ -57,4 +57,12 @@ Result: Works!
 
 ### case 6
 
-- add a lot of deps (ported form my private repository)
+- add a lot of deps (ported from my private repository)
+
+Result: Works!
+
+### case 7
+
+- add a lot of deps into child repo
+
+Result:
