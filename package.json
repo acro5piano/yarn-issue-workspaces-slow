@@ -12,6 +12,7 @@
     ]
   },
   "devDependencies": {
+    "js-yaml": "^3.13.1",
     "ky": "^0.14.0"
   }
 }

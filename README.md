@@ -29,6 +29,13 @@ Result: Works!
   - node_modules
   - packages/utils/node_modules
 
-Result: Fails!
+Result: Works!
 
-Even though all `node_modules` dirs are cached.
+### case 3
+
+- version matches with workspace (js-yaml: ^3.13.1) and @yiws/utils (same)
+- cache dir
+  - node_modules
+  - packages/utils/node_modules
+
+Result:
